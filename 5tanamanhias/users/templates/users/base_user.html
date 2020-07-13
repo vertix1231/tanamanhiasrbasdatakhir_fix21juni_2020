@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	{% include "users/snippets/styles.html" %}
+
+	{% block app_css %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+	{% endblock app_css %}
+</head>
+<body>
+	{% include "users/snippets/navbar_user.html" %}
+
+	{% comment %} <div class="jumbotron jumbotron-fluid">
+		<div class="container">
+		
+			
+		</div>
+			
+	</div> {% endcomment %}
+	 {% comment %} <div class="container h-100">
+		{% block content %}
+		{% endblock content %}	
+	 </div> {% endcomment %}
+
+	{% block content %}
+	{% endblock content %}	
+	
+
+	
+	
+
+	{% include "users/snippets/scripts.html" %}
+</body>
+</html>

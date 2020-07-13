@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Out</title>
+</head>
+<body>
+    <H1>Are you sure want to log out?</H1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" name="logout" value="Okay">
+        <a class="btn btn-outline-danger" href="/">Cancle</a>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<nav class="navbar navbar-expand-md navbar-light bg-success shadow" style="margin-top: -40px">
+	  <a class="navbar-brand" href="create/">
+	  	<h3></h3><img src="/static/img/pngflow.com.png" style="height:20px">Menambahkan Artikel</a> 
+</nav>	  
+	{% for post in Posts %}
+
+	<div class="container-fluid">
+		<div class="container bg-success text-white shadow" style=" center; height: 150px; margin-top: 10px" id="myBody">
+			<div style="font-family: 'Times New Roman', Times, serif; margin-left: 10px;">
+				<h3>{{post.judul}}</h3>
+				<p>Penulis : {{post.author}} | {{post.publish}} </p>
+			</div>
+			<td>
+				<a class="btn btn-warning" href="{% url 'artikel:update' post.id %}">Edit</a>
+	      		<a class="btn btn-danger" href="{% url 'artikel:delete' post.id %}">Delete</a>
+	        </td>
+
+		</div>
+	</div>
+
+
+	{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{page_title}}
+{% endblock title %}
+
+{% block content %}
+<div class="container" style="background-color: rgb(27, 66, 27);">
+	<h1>{{page_title}}</h1>
+
+
+		<form method='POST'>
+			{% csrf_token %}
+
+			{% for form in post_form %}
+				<div class="form-group" style="margin-right: 10px ">
+					{{form.label}}
+					{{form}}
+				</div>
+			{% endfor %}
+			<button class='btn btn-primary' type="Submit">Posting</button>
+		</form>
+{% endblock content %}
